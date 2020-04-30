@@ -4,7 +4,8 @@ import {
   Text, View, TouchableOpacity,
   Dimensions,
   TextInput,
-  ScrollView
+  ScrollView,
+  StatusBar
 } from 'react-native';
 const { width, height } = Dimensions.get("window");
 var goal_text = "";
@@ -25,6 +26,8 @@ export default App = () => {
   }
   return (
     <View style={styles.main}>
+      <StatusBar backgroundColor="#222" style={{ color: "#fff" }} />
+
       <Text
         style={styles.text}
         numberOfLines={1}
