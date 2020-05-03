@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {
   StyleSheet,
-  Text, View, TouchableOpacity,
+  Text,
+  View,
+  TouchableOpacity,
   Dimensions,
-  TextInput,
-  ScrollView,
   StatusBar
 } from 'react-native';
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 var goal_text = "";
 export default App = () => {
   const [text, setText] = useState("");
@@ -15,8 +15,7 @@ export default App = () => {
     if (key === "AC") {
       goal_text = text
       setText("")
-    }
-    else if (key === "+/-")
+    } else if (key === "+/-")
       setText("-" + text)
     else if (key === "=")
       setText(goal_text)
@@ -35,11 +34,12 @@ export default App = () => {
       >{text}</Text>
       <View style={styles.number_container}>
         {
-          [["AC", "+/-", "%", "/"],
-          ["7", "8", "9", "*"],
-          ["4", "5", "6", "-"],
-          ["1", "2", "3", "+"],
-          ["", "0", ".", "="],
+          [
+            ["AC", "+/-", "%", "/"],
+            ["7", "8", "9", "*"],
+            ["4", "5", "6", "-"],
+            ["1", "2", "3", "+"],
+            ["", "0", ".", "="],
           ].map((item, index) => {
             return (
               <View key={index} style={styles.row_container}>
